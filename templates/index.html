@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lip Reading Trigger System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <img src="{{ url_for('static', filename='lip_banner.jpg') }}" alt="Lip Banner" class="banner">
+    <h1>🎤 Lip Reading Noise Canceller</h1>
+    <p>Click below to start listening for the trigger word <strong>"go"</strong>.</p>
+    <form action="/start" method="POST">
+      <button type="submit">Start Detection</button>
+    </form>
+    {% if result %}
+      <p><strong>Prediction:</strong> {{ result }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>
